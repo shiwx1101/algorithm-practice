@@ -1,4 +1,4 @@
-package explore.dynamicProgramming;
+package org.algorithm.explore.dynamicprograming;
 
 
 /**
