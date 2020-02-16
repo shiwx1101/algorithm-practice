@@ -79,7 +79,7 @@ class EditDistance{
         for (int i = 1; i < n; i++) {
             for (int j = 1; j < m; j++) {
                 if(a[i]==b[j]){
-                    states[i][j] = states[i-1][j-1];
+                    states[i][j] = min(states[i-1][j-1], states[i-1][j], states[i][j-1]);
                 }else{
                     states[i][j] = min(states[i-1][j-1]+1, states[i-1][j]+1, states[i][j-1]+1);
                 }
