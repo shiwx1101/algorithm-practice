@@ -1,4 +1,4 @@
-package problem;
+package org.algorithm.leetcode.problem;
 /**
  * 4. Median of Two Sorted Arrays
  * 
