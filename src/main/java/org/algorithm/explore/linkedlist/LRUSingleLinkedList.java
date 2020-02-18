@@ -2,7 +2,7 @@ package org.algorithm.explore.linkedlist;
 /**
  * 
  */
-class LRUSingleLinkedList<E>{
+class LRUSingleLinkedList<E extends Comparable<E>>{
 
     private int n = 5;
     private int size = 0;
