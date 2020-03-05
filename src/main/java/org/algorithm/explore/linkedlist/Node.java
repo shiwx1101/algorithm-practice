@@ -3,9 +3,9 @@ package org.algorithm.explore.linkedlist;
  * 
  * @param <E>
  */
-class Node<E extends Comparable<E>>{
-    E e;
-    Node<E> next;
+public class Node<E extends Comparable<E>>{
+    public E e;
+    public Node<E> next;
     public Node(){
 
     }
