@@ -1,4 +1,4 @@
-package org.algorithm.leetcode.problem;
+package org.algorithm.leetcode.problem.list;
 
 /**
  * 
@@ -34,7 +34,7 @@ public class AddTwoNumber {
         //0标
         ListNode markZero = new ListNode(0);
         //余数
-        int res = 0;
+        int res;
         //进位
         int remain = 0;
 
