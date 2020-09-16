@@ -18,9 +18,8 @@ public abstract class CommonStrategyFactory<S extends IStrategy<E>, E extends IS
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         ParameterizedType genericSuperclass = (ParameterizedType) getClass().getGenericSuperclass();
-        Type actualTypeArgument = genericSuperclass.getActualTypeArguments()[0];
-        String typeName = actualTypeArgument.getTypeName();
-        Class<?> clazz = (Class<?>) genericSuperclass.getRawType();
+        ParameterizedType actualTypeArgument = (ParameterizedType)genericSuperclass.getActualTypeArguments()[0];
+        Class<?> clazz = (Class<?>) actualTypeArgument.getRawType();
         Map<String, ?> beansOfType = applicationContext.getBeansOfType(clazz);
         beansOfType.forEach((k, v) -> {
             S s = (S) v;
