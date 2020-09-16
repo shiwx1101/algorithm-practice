@@ -26,9 +26,9 @@ public class App implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        IFlyStrategy<String, Integer, FlyEnum> fa = flyFactory.get(FlyEnum.PLANE);
-        String fly = fa.fly(1);
-        System.out.println(fly);
+//        IFlyStrategy<String, Integer, FlyEnum> fa = flyFactory.get(FlyEnum.PLANE);
+//        String fly = fa.fly(1);
+//        System.out.println(fly);
         System.out.println("-------");
     }
 }
