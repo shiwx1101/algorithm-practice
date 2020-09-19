@@ -20,8 +20,8 @@ import java.util.Map;
 @Component
 public class FlyFactory extends CommonStrategyFactory<IFlyStrategy<String,Integer,FlyEnum>, FlyEnum> {
 
-//    public IFlyStrategy<String, Integer,FlyEnum> get(FlyEnum e) {
-//        return map.get(e);
-//    }
+    public IFlyStrategy<String, Integer,FlyEnum> get(FlyEnum e) {
+        return map.get(e);
+    }
 
 }

@@ -13,13 +13,13 @@ import java.util.Map;
 
 public abstract class CommonStrategyFactory<S extends IStrategy<E>, E extends IStrategyEnum> implements ApplicationContextAware {
 
-    protected Map<E, S> map = new HashMap<E, S>();
+    protected final Map<E, S> map = new HashMap<E, S>();
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         ParameterizedType genericSuperclass = (ParameterizedType) getClass().getGenericSuperclass();
         ParameterizedType actualTypeArgument = (ParameterizedType)genericSuperclass.getActualTypeArguments()[0];
-        Class<?> clazz = (Class<?>) actualTypeArgument.getRawType();
+        Class<?> clazz = (Class<?>)actualTypeArgument.getRawType();
         Map<String, ?> beansOfType = applicationContext.getBeansOfType(clazz);
         beansOfType.forEach((k, v) -> {
             S s = (S) v;
