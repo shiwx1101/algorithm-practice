@@ -7,13 +7,14 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 
 public abstract class CommonStrategyFactory<S extends IStrategy<E>, E extends IStrategyEnum> implements ApplicationContextAware {
 
     protected final Map<E, S> map = new HashMap<E, S>();
+
+    public abstract S get(E e);
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
