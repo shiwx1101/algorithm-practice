@@ -1,4 +1,4 @@
-package design.i;
+package design.strategy.i;
 
 public interface IStrategyEnum {
 }

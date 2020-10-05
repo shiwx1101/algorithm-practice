@@ -1,7 +1,7 @@
-package design.ii;
+package design.strategy.ii;
 
-import design.i.IStrategy;
-import design.i.IStrategyEnum;
+import design.strategy.i.IStrategy;
+import design.strategy.i.IStrategyEnum;
 
 public interface IFlyStrategy<R, P, E extends IStrategyEnum> extends IStrategy<E> {
 

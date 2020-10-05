@@ -1,7 +1,7 @@
-package design.iii;
+package design.strategy.iii;
 
-import design.ii.CommonStrategyFactory;
-import design.ii.IFlyStrategy;
+import design.strategy.ii.CommonStrategyFactory;
+import design.strategy.ii.IFlyStrategy;
 import org.springframework.stereotype.Component;
 
 @Component

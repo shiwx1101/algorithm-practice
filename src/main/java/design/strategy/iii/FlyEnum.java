@@ -1,6 +1,6 @@
-package design.iii;
+package design.strategy.iii;
 
-import design.ii.IFlyEnum;
+import design.strategy.ii.IFlyEnum;
 
 public enum FlyEnum implements IFlyEnum {
     BIRD,

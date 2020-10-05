@@ -1,8 +1,8 @@
-package design.ii;
+package design.strategy.ii;
 
 
-import design.i.IStrategy;
-import design.i.IStrategyEnum;
+import design.strategy.i.IStrategy;
+import design.strategy.i.IStrategyEnum;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

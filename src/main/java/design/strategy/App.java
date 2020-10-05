@@ -1,8 +1,8 @@
-package design;
+package design.strategy;
 
-import design.ii.IFlyStrategy;
-import design.iii.FlyEnum;
-import design.iii.FlyFactory;
+import design.strategy.ii.IFlyStrategy;
+import design.strategy.iii.FlyEnum;
+import design.strategy.iii.FlyFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
