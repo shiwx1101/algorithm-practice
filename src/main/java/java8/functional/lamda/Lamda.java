@@ -6,15 +6,16 @@ import java.util.List;
 import java.util.Map;
 
 public class Lamda {
-    
+
     public static void main(String[] args) {
         Map<Type, Handler> handlerMap = register();
         List<String> fruits = Arrays.asList("orange", "pear", "apple", "other");
         // 获取随机的水果类型
         int index = (int) (Math.random() * 4);
         String type = fruits.get(index);
-        System.out.println(type);
-        handlerMap.get(Type.valueOf(type.toUpperCase()));
+        Handler handler = handlerMap.get(Type.valueOf(type.toUpperCase()));
+        handler.handler();
+
     }
 
     private static Map<Type, Handler> register() {
