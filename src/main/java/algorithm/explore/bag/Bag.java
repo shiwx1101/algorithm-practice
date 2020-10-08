@@ -45,15 +45,6 @@ public class Bag<T> implements Iterable<T> {
             return t;
         }
 
-        @Override
-        public void remove() {
-
-        }
-
-        @Override
-        public void forEachRemaining(Consumer<? super T> action) {
-
-        }
     }
 
     @Override
@@ -67,11 +58,6 @@ public class Bag<T> implements Iterable<T> {
         for (Node x = first; x != null; x = x.next) {
             action.accept((T) x.value);
         }
-    }
-
-    @Override
-    public Spliterator<T> spliterator() {
-        return null;
     }
 
 
