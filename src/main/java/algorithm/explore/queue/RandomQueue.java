@@ -1,8 +1,12 @@
 package algorithm.explore.queue;
 
-import java.util.Random;
+import algorithm.explore.card.Card;
 
-public class RandomQueue<T> {
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class RandomQueue<T> implements Iterable<T> {
 
     private int size;
 
@@ -48,5 +52,57 @@ public class RandomQueue<T> {
 
     public RandomQueue() {
         metaData = (T[]) new Object[1];
+    }
+
+
+    @Override
+    public Iterator<T> iterator() {
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<T> {
+
+        int cursor;
+
+        @Override
+        public boolean hasNext() {
+            return cursor != size;
+        }
+
+        @Override
+        public T next() {
+            if (cursor >= size) {
+                throw new NoSuchElementException();
+            }
+            return metaData[cursor++];
+        }
+
+        public ListIterator() {
+            for (int i = 0; i < size; i++) {
+                int j = i + (int) (Math.random() * (size - i));
+                T temp = metaData[i];
+                metaData[i] = metaData[j];
+                metaData[j] = temp;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        List<Card> cards = Card.generator();
+        RandomQueue<Card> queue = new RandomQueue<>();
+        cards.forEach(queue::enqueue);
+        Iterator<Card> iterator = queue.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+        List<Card> myself = new ArrayList<>();
+        System.out.println(queue.size);
+        while (queue.size > 0) {
+            Card card = queue.dequeue();
+            if (queue.size % 4 == 3) {
+                myself.add(card);
+            }
+        }
+        myself.stream().sorted(Comparator.comparing(Card::getMark).thenComparing(Card::getColor)).forEach(System.out::println);
     }
 }
