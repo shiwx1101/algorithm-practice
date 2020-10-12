@@ -1,10 +1,6 @@
 package algorithm.explore.queue;
 
-import algorithm.explore.card.Card;
-
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class RandomQueue<T> implements Iterable<T> {
 
