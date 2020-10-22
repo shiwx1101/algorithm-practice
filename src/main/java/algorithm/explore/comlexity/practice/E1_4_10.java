@@ -11,7 +11,7 @@ public class E1_4_10 {
         while (hi >= lo) {
             int mid = (lo + hi) / 2;
             if (a[mid] == key) {
-                if (mid - 1 > 0 && a[mid - 1] == key) {
+                if (mid - 1 >= 0 && a[mid - 1] == key) {
                     hi = mid - 1;
                 } else {
                     return mid;
@@ -26,7 +26,7 @@ public class E1_4_10 {
     }
 
     public static void main(String[] args) {
-        int[] a = {0, 1, 2, 2, 2, 3, 3, 4, 4, 5};
-        System.out.println(rank(a, 4));
+        int[] a = {0, 0, 2, 2, 2, 3, 3, 4, 4, 5};
+        System.out.println(rank(a, 0));
     }
 }
