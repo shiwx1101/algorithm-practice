@@ -13,7 +13,6 @@ import edu.princeton.cs.algs4.StdOut;
  * <p>
  * int[] a = {10,2,3,4,5,6,0,7,8}; 找的到解 index = 1
  * <p>
- * TODO 此题有待解决
  */
 public class E1_4_18 {
 
@@ -25,15 +24,16 @@ public class E1_4_18 {
     }
 
     public int minimum() {
-        if (a.length < 3) {
-            throw new RuntimeException();
-        }
+        if (a.length < 2) return -1;
         int lo = 0;
-        int hi = a.length;
+        int hi = a.length - 1;
         while (hi > lo) {
             int mid = (lo + hi) / 2;
-            if (mid == lo || mid == hi) {
-                return -1;
+            if (mid == 0 && a[mid] < a[mid + 1]) {
+                return 0;
+            }
+            if (mid == a.length - 1 && a[mid] < a[mid - 1]) {
+                return a.length - 1;
             }
             if (a[mid - 1] > a[mid] && a[mid + 1] > a[mid]) {
                 return mid;
@@ -49,7 +49,7 @@ public class E1_4_18 {
     }
 
     public static void main(String[] args) {
-        int[] a = {10, 2, 3, 4, 5, 6, 0, 7, 8};
+        int[] a = {1, 2, 3, 4, 5, 6, 0, 7, 8};
         E1_4_18 e1_4_18 = new E1_4_18(a);
         StdOut.println(e1_4_18.minimum());
     }
