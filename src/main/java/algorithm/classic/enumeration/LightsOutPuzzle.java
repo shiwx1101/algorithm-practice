@@ -1,4 +1,4 @@
-package algorithm.classic;
+package algorithm.classic.enumeration;
 
 import edu.princeton.cs.algs4.StdOut;
 
