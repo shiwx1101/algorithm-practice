@@ -8,12 +8,17 @@ import edu.princeton.cs.algs4.StdOut;
 import java.util.Arrays;
 
 /**
+ * //终止条件
+ * //把问题分成更小的子问题
+ * //有递  有归（该往哪里归？）
+ *
  * @author shiwenxiang
  * @version : NQueen.java, v0.1 2020/11/18 shiwenxiang Exp $$
  */
 public class NQueen {
 
-    static int[] solution =  new int[8];; //第几行放什么位置
+    static int[] solution = new int[8];
+    ; //第几行放什么位置
 
     static int N = 8;
 
