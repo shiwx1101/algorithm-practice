@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2018-2020 XianChengKeJi.Co.Ltd. All Rights Reserved.
  */
-package algorithm.classic.sort;
+package algorithm.classic.divideAndConquer.sort;
 
 import edu.princeton.cs.algs4.StdOut;
 
