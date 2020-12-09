@@ -5,6 +5,8 @@ package algorithm.classic.dynamicProgramming;
 
 import edu.princeton.cs.algs4.StdOut;
 
+import java.util.Arrays;
+
 /**
  * N个物品    体积w[0]...w[n-1]  价值V[0]..V[n-1]
  * M体积Bag
@@ -83,9 +85,32 @@ public class Bag {
 
     }
 
+    /**
+     * @param weight
+     * @return
+     */
+    public static int d2() {
+
+        int[] result = new int[9 + 1];
+        if (items[0] <= 9) {
+            result[items[0]] = values[0];
+        }
+        for (int i = 1; i < 5; i++) {
+            for (int j = 9; j > 0; j--) {
+                if (j - items[i] >= 0) {
+                    result[j] = Math.max(result[j-items[i]] + values[i],result[j]);
+                }
+            }
+        }
+        StdOut.println(Arrays.toString(result));
+        return result[9];
+    }
+
+
     public static void main(String[] args) {
         f(0, 0, 0, "");
         d();
+        StdOut.println(d2());
     }
 
 }
