@@ -86,7 +86,7 @@ public class Bag {
     }
 
     /**
-     * @param weight
+     * @param
      * @return
      */
     public static int d2() {
@@ -98,18 +98,35 @@ public class Bag {
         for (int i = 1; i < 5; i++) {
             for (int j = 9; j > 0; j--) {
                 if (j - items[i] >= 0) {
-                    result[j] = Math.max(result[j-items[i]] + values[i],result[j]);
+                    result[j] = Math.max(result[j - items[i]] + values[i], result[j]);
                 }
             }
         }
         StdOut.println(Arrays.toString(result));
+
+
+        int i = 4;
+        int j = 9;
+        while (i > 0 && j > 0) {
+            for (int k = i; k > 0; k--) {
+                // result[j - items[i]] + values[i] == result[j] //选中
+                if (j - items[i] >= 0 && result[j - items[i]] + values[i] == result[j]) {
+                    j = j - items[i];
+                    StdOut.println("选了" + i);
+                    break;
+                }
+            }
+            i--;
+        }
+
+
         return result[9];
     }
 
 
     public static void main(String[] args) {
-        f(0, 0, 0, "");
-        d();
+//        f(0, 0, 0, "");
+//        d();
         StdOut.println(d2());
     }
 
