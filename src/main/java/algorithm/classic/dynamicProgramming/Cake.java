@@ -48,7 +48,44 @@ public class Cake {
         return Math.min(top, left);
     }
 
+    public static int ways(int w, int h, int m) {
+        int[][][] res = new int[w + 1][h + 1][m + 1];
+        for (int i = 1; i <= w; i++) {
+            for (int j = 0; j <= h; j++) {
+                for (int k = 0; k <= m; k++) {
+                    if (k == 0) {
+                        res[i][j][k] = i * j;
+                    } else if (i * j - 1 < k) {
+                        res[i][j][k] = Integer.MAX_VALUE;
+                    } else {
+                        //枚举第一道横着切;
+                        res[i][j][k] = Integer.MAX_VALUE;
+                        for (int l = 1; l <= i - 1; l++) {
+                            for (int n = 0; n <= k - 1; n++) {
+                                res[i][j][k] = Math.min(res[i][j][k], Math.max(res[l][j][n], res[i - l][j][k - n - 1]));
+                            }
+                        }
+                        //枚举第一道竖着切;
+                        for (int l = 1; l <= j - 1; l++) {
+                            for (int n = 0; n <= k - 1; n++) {
+                                res[i][j][k] = Math.min(res[i][j][k], Math.max(res[i][l][n], res[i][j - l][k - n - 1]));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return res[w][h][m];
+    }
+
+
     public static void main(String[] args) {
-        System.out.println(cut(11, 11, 1));
+        long s = System.currentTimeMillis();
+        System.out.println(cut(7, 7, 7));
+        System.out.println(System.currentTimeMillis()- s);
+        System.out.println("===================");
+        s = System.currentTimeMillis();
+        System.out.println(ways(7, 7, 7));
+        System.out.println(System.currentTimeMillis()- s);
     }
 }
