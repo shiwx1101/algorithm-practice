@@ -9,6 +9,7 @@ public class OptionalApp {
         User user = new User(1, "swx", 28);
         //输出用户的id
         Optional.ofNullable(user).map(User::getId).ifPresent(System.out::println);
+
         //当用户没有年龄时，使用默认值20岁
         Optional.ofNullable(user).map(User::getAge).orElse(20);
         //当用户的姓名为空时，抛出异常

@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.*;
+
 public class StreamDemo {
 
     private List<Item> items;
@@ -33,7 +35,7 @@ public class StreamDemo {
         StreamDemo streamDemo = new StreamDemo();
         List<Item> items = streamDemo.items;
         // 按照 名字分组
-        Map<String, List<Item>> map = items.stream().collect(Collectors.groupingBy(Item::getName));
+        Map<String, List<Item>> map = items.stream().collect(groupingBy(Item::getName));
         map.forEach((k, v) -> {
             System.out.println(k);
             v.forEach(System.out::println);
@@ -43,7 +45,7 @@ public class StreamDemo {
         System.out.println("$$$$$$$$$$$$$$$$$$$$$$");
 
         //名字 单价关系 会重复 但是可以用新值覆盖
-        Map<String, BigDecimal> map2 = items.stream().collect(Collectors.toMap(Item::getName, Item::getPrice, (oldValue, newValue) -> newValue));
+        Map<String, BigDecimal> map2 = items.stream().collect(toMap(Item::getName, Item::getPrice, (oldValue, newValue) -> newValue));
         map2.forEach((k, v) -> {
             System.out.println(k + " " + v);
             System.out.println("-----------");
@@ -52,7 +54,7 @@ public class StreamDemo {
         System.out.println("$$$$$$$$$$$$$$$$$$$$$$");
 
         //求某个值的映射
-        Map<String, List<BigDecimal>> map3 = items.stream().collect(Collectors.groupingBy(Item::getName, Collectors.mapping(Item::getPrice, Collectors.toList())));
+        Map<String, List<BigDecimal>> map3 = items.stream().collect(groupingBy(Item::getName, Collectors.mapping(Item::getPrice, Collectors.toList())));
         map3.forEach((k, v) -> {
             System.out.println(k);
             v.forEach(System.out::println);
@@ -62,7 +64,7 @@ public class StreamDemo {
         System.out.println("$$$$$$$$$$$$$$$$$$$$$$");
 
         //分组统计
-        Map<String, Integer> map4 = items.stream().collect(Collectors.groupingBy(Item::getName, Collectors.summingInt(Item::getQty)));
+        Map<String, Integer> map4 = items.stream().collect(groupingBy(Item::getName, summingInt(Item::getQty)));
         map4.forEach((k, v) -> {
             System.out.println(k + " " + v);
             System.out.println("-----------");
@@ -71,7 +73,7 @@ public class StreamDemo {
         System.out.println("$$$$$$$$$$$$$$$$$$$$$$");
 
         //分组统计
-        Map<Boolean, Integer> map5 = items.stream().collect(Collectors.partitioningBy(item -> item.name.length() > 5, Collectors.summingInt(Item::getQty)));
+        Map<Boolean, Integer> map5 = items.stream().collect(partitioningBy(item -> item.name.length() > 5, summingInt(Item::getQty)));
         map5.forEach((k, v) -> {
             System.out.println(k);
             System.out.println(v);
@@ -82,7 +84,7 @@ public class StreamDemo {
 
         //通过多个条件分组
         Map<List<String>, Integer> map6 = items.stream().collect(
-                Collectors.groupingBy(item -> Arrays.asList(item.getName(), item.getPrice().toString()), Collectors.summingInt(Item::getQty)));
+                Collectors.groupingBy(item -> Arrays.asList(item.getName(), item.getPrice().toString()), summingInt(Item::getQty)));
         System.out.println(map6);
 
 
