@@ -1,4 +1,4 @@
-package algorithm.leetcode.problem;
+package algorithm.problem;
 
 class LongestPalindromic{
 

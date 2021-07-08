@@ -1,4 +1,4 @@
-package algorithm.leetcode.problem.list;
+package algorithm.problem.list;
 
 import javax.swing.plaf.synth.SynthTableHeaderUI;
 import java.util.List;

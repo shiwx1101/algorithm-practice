@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2018-2020 XianChengKeJi.Co.Ltd. All Rights Reserved.
  */
-package algorithm.leetcode.problem.list;
+package algorithm.problem.list;
 
 /**
  * Given a linked list, remove the n-th node from the end of list and return its head.

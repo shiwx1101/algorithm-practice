@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2018-2020 XianChengKeJi.Co.Ltd. All Rights Reserved.
  */
-package algorithm.leetcode.problem.list;
+package algorithm.problem.list;
 
 /**
  * Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.

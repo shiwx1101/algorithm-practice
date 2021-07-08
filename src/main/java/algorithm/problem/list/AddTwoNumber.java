@@ -1,4 +1,4 @@
-package algorithm.leetcode.problem.list;
+package algorithm.problem.list;
 
 /**
  * You are given two non-empty linked lists representing two non-negative

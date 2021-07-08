@@ -1,4 +1,4 @@
-package algorithm.leetcode.problem.list;
+package algorithm.problem.list;
 
 /**
  * Given a linked list, swap every two adjacent nodes and return its head.

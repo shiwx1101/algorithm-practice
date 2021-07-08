@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2018-2020 XianChengKeJi.Co.Ltd. All Rights Reserved.
  */
-package algorithm.leetcode.problem.list;
+package algorithm.problem.list;
 
 /**
  * Given a linked list, rotate the list to the right by k places, where k is non-negative.

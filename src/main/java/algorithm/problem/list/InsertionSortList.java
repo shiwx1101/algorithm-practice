@@ -1,4 +1,4 @@
-package algorithm.leetcode.problem.list;
+package algorithm.problem.list;
 
 
 import java.util.List;
